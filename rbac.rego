@@ -10,3 +10,10 @@ allow if {
     perm.action == input.action
     perm.resource == input.resource
 }
+
+allow if {
+    some d in data.delegations
+    d.to_user == input.user
+    d.action == input.action
+    d.resource == input.resource
+}
